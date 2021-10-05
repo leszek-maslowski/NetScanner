@@ -1,0 +1,24 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!hosts"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="hosts">
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Name</th>
+      <th>OS</th>
+      <th>ComputerName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let host of hosts">
+      <td>{{ host.address }}</td>
+      <td>{{ host.name }}</td>
+      <td>{{ host.os }}</td>
+      <td>{{ host.computerName }}</td>
+    </tr>
+  </tbody>
+</table>
