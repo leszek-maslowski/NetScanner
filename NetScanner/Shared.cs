@@ -77,12 +77,4 @@ namespace NetScanner
             return string.Format("{0} - {1}", From, To);
         }
     }
-
-    public class ScannerHost
-    {
-        public string Address { get; set; }
-        public string Name { get; set; }
-        public string OS { get; set; }
-        public string ComputerName { get; set; }
-    }
 }

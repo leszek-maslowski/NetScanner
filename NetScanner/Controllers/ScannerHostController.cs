@@ -13,12 +13,9 @@ namespace NetScanner.Controllers
     [Route("[controller]")]
     public class ScannerHostController : ControllerBase
     {
-        IpScanner scanner;
+        private static IpScanner scanner = new IpScanner();
 
-        public ScannerHostController()
-        {
-            scanner = new IpScanner();
-        }
+        
 
         private readonly ILogger<ScannerHostController> _logger;
 
@@ -30,12 +27,7 @@ namespace NetScanner.Controllers
         [HttpGet]
         public IEnumerable<ScannerHost> Get()
         {
-            return new ScannerHost[] { new ScannerHost()
-            {
-                Address = "test",
-                ComputerName = "bla bla"
-            } };
-            //return scanner.Scan();
+            return scanner.Scan();
         }
     }
 }
